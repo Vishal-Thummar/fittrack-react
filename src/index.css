@@ -1,6 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{--bg:244 241 228;--card:255 253 245;--ink:43 29 22;--mute:122 107 95;--line:226 220 198}
-@media (prefers-color-scheme:dark){:root{--bg:28 21 17;--card:39 30 24;--ink:243 234 216;--mute:168 154 138;--line:58 46 38}}
-body{@apply bg-bg font-sans font-medium text-ink antialiased;-webkit-tap-highlight-color:transparent}
+:root {
+  --bg: 244 241 228;
+  --card: 255 253 245;
+  --ink: 43 29 22;
+  --mute: 122 107 95;
+  --line: 226 220 198;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 28 21 17;
+    --card: 39 30 24;
+    --ink: 243 234 216;
+    --mute: 168 154 138;
+    --line: 58 46 38;
+  }
+}
+body {
+  @apply bg-bg font-sans font-medium text-ink antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
