@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useApp } from "./context/AppContext.jsx";
 import Layout from "./components/Layout.jsx";
 import Login from "./pages/Login.jsx";
@@ -12,11 +13,17 @@ const PAGES = { today: Today, timeline: Timeline, plan: Plan, goals: Goals };
 export default function App() {
   const { user } = useApp();
   const [tab, setTab] = useState("today");
-  if (!user) return <Login />;
   const Page = PAGES[tab];
   return (
-    <Layout tab={tab} setTab={setTab}>
-      <Page />
-    </Layout>
+    <>
+      {user ? (
+        <Layout tab={tab} setTab={setTab}>
+          <Page />
+        </Layout>
+      ) : (
+        <Login />
+      )}
+      <SpeedInsights />
+    </>
   );
 }
