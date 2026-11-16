@@ -126,11 +126,12 @@ export default function WorkoutTracker({ dateKey = iso(new Date()) }) {
                       : "Ready to Start"}
             </span>
             <div className="mt-0.5 flex items-baseline gap-4 font-display text-2xl">
-              <span>
-                Work: {formatDuration(log.timer?.activeSec)}
-              </span>
+              <span>Work: {formatDuration(log.timer?.activeSec)}</span>
               <span className="text-brand">
-                Rest: {formatDuration(phase === "resting" ? currentRest : log.timer?.restSec)}
+                Rest:{" "}
+                {formatDuration(
+                  phase === "resting" ? currentRest : log.timer?.restSec,
+                )}
               </span>
             </div>
           </div>
@@ -238,7 +239,8 @@ export default function WorkoutTracker({ dateKey = iso(new Date()) }) {
                     {/* Show recorded rest between sets */}
                     {setData.restSec > 0 && (
                       <div className="my-1 text-center text-[11px] font-medium text-brand">
-                        ↓ Rested {formatDuration(setData.restSec)} before next set
+                        ↓ Rested {formatDuration(setData.restSec)} before next
+                        set
                       </div>
                     )}
                   </div>

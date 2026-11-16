@@ -14,14 +14,14 @@ export const fmt = (d, o) => d.toLocaleDateString("en-IN", o);
 export const planFor = (plan, d) =>
   Object.values(plan).find((p) => p.days.includes(d.getDay()));
 export const emptyLog = () => ({
-  done: {},      // { [exerciseId]: [true, false, false] }
-  sets: {},      // { [exerciseId]: [{ reps: 15, weight: 10, restSec: 60 }, ...] }
+  done: {}, // { [exerciseId]: [true, false, false] }
+  sets: {}, // { [exerciseId]: [{ reps: 15, weight: 10, restSec: 60 }, ...] }
   photos: [],
   note: "",
   timer: {
-    activeSec: 0,      // Total active working time in seconds
-    restSec: 0,        // Total rest time in seconds
-    exerciseGaps: [],  // Seconds taken between finishing one exercise and starting the next
+    activeSec: 0, // Total active working time in seconds
+    restSec: 0, // Total rest time in seconds
+    exerciseGaps: [], // Seconds taken between finishing one exercise and starting the next
     finished: false,
   },
 });
@@ -61,7 +61,6 @@ export function weekCount(data, from = new Date()) {
   }
   return n;
 }
-
 
 /** Format seconds into MM:SS or HH:MM:SS */
 export const formatDuration = (sec = 0) => {

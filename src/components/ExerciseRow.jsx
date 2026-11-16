@@ -17,7 +17,8 @@ export default function ExerciseRow({
         <div>
           <div className="font-semibold text-ink">{exercise.name}</div>
           <div className="text-xs text-mute">
-            {exercise.sets} sets {exercise.reps ? `• Target: ${exercise.reps}` : ""}
+            {exercise.sets} sets{" "}
+            {exercise.reps ? `• Target: ${exercise.reps}` : ""}
           </div>
         </div>
       </div>

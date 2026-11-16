@@ -27,9 +27,7 @@ export default function Today() {
     progress = pct(data, key) * 100;
 
   // Timer states: "idle" | "working" | "resting" | "paused" | "finished"
-  const [phase, setPhase] = useState(
-    log.timer?.finished ? "finished" : "idle",
-  );
+  const [phase, setPhase] = useState(log.timer?.finished ? "finished" : "idle");
   const [currentRest, setCurrentRest] = useState(0);
   const lastExerciseRef = useRef(null);
 
@@ -52,8 +50,10 @@ export default function Today() {
           ...prev,
           timer: {
             ...t,
-            activeSec: phase === "working" ? (t.activeSec || 0) + 1 : t.activeSec || 0,
-            restSec: phase === "resting" ? (t.restSec || 0) + 1 : t.restSec || 0,
+            activeSec:
+              phase === "working" ? (t.activeSec || 0) + 1 : t.activeSec || 0,
+            restSec:
+              phase === "resting" ? (t.restSec || 0) + 1 : t.restSec || 0,
           },
         };
       });
@@ -218,7 +218,10 @@ export default function Today() {
                         ⚡ Next Set
                       </Button>
                     )}
-                    <Button variant="outline" onClick={() => setPhase("paused")}>
+                    <Button
+                      variant="outline"
+                      onClick={() => setPhase("paused")}
+                    >
                       ⏸ Pause
                     </Button>
                   </>
@@ -250,7 +253,8 @@ export default function Today() {
             </div>
             <ProgressBar value={progress} />
             <p className="mt-2 text-sm text-mute">
-              Enter reps (15, 12, 10) and kg for each set. Ticking ✓ starts your rest timer automatically.
+              Enter reps (15, 12, 10) and kg for each set. Ticking ✓ starts your
+              rest timer automatically.
             </p>
             {[...groups].map(([group, items]) => (
               <Fragment key={group}>

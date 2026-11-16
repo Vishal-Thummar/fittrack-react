@@ -155,7 +155,9 @@ export function AppProvider({ children }) {
             ariaLabel="loading"
             visible={true}
           />
-          {loginMsg && <p style={{ marginTop: 12, color: "#fff" }}>{loginMsg}</p>}
+          {loginMsg && (
+            <p style={{ marginTop: 12, color: "#fff" }}>{loginMsg}</p>
+          )}
         </div>
       )}
       {children}

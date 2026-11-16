@@ -32,7 +32,8 @@ export default function TimelineStats() {
       {/* Period Selector */}
       <Card>
         <label className="mb-1 block text-xs font-semibold text-mute">
-          Select {view === "daily" ? "Date" : view === "monthly" ? "Month" : "Year"}
+          Select{" "}
+          {view === "daily" ? "Date" : view === "monthly" ? "Month" : "Year"}
         </label>
         {view === "daily" && (
           <Input
@@ -97,7 +98,10 @@ export default function TimelineStats() {
               </strong>
               <span className="text-mute">
                 {dayLog.timer.exerciseGaps
-                  .map((g, i) => `Exercise ${i + 1} → ${i + 2}: ${formatDuration(g)}`)
+                  .map(
+                    (g, i) =>
+                      `Exercise ${i + 1} → ${i + 2}: ${formatDuration(g)}`,
+                  )
                   .join(" • ")}
               </span>
             </div>
